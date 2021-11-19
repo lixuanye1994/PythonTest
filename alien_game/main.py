@@ -4,10 +4,8 @@ from setting import Settings
 from ship import Ship
 
 
+# 游戏程序主要入口，初始化游戏并创建游戏资源
 class AlienGame:
-
-    # 游戏程序主要入口，初始化游戏并创建游戏资源
-
     def __init__(self):
         pygame.init()
         # 设置游戏窗口大小，1200x800，并设置游戏名字
@@ -23,19 +21,28 @@ class AlienGame:
         # 导入飞船类并初始化飞船类，将AlienGame传入Ship()
         self.ship = Ship(self)
 
+    def _check_events(self):
+        # 监视键盘和鼠标事件
+        for even in pygame.event.get():
+            if even.type == pygame.QUIT:
+                sys.exit()
+            elif even.type == pygame.KEYDOWN:
+                if even.key == pygame.K_RIGHT:
+                    self.ship.rect.x += 1
+
+    def _update_screen(self):
+        # 让绘制的屏幕可见
+        self.screen.fill(self.setting.bg_color)
+        # 绘制飞船可见
+        self.ship.blitme()
+        # 调用pygame显示所有绘制内容
+        pygame.display.flip()
+
     def run_game(self):
         # 开始游戏主循环
         while True:
-            # 监视键盘和鼠标事件
-            for even in pygame.event.get():
-                if even.type == pygame.QUIT:
-                    sys.exit()
-            # 让绘制的屏幕可见
-            self.screen.fill(self.setting.bg_color)
-            # 绘制飞船可见
-            self.ship.blitme()
-            # 调用pygame显示所有绘制内容
-            pygame.display.flip()
+            self._check_events()
+            self._update_screen()
 
 
 # 程序开始
