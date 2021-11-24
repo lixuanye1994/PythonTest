@@ -196,7 +196,8 @@ class AlienInvasion:
         self.aliens.draw(self.screen)
         pygame.display.flip()
 
-if __name__=='__main__':
-    #创建游戏实例并运行游戏。
+
+if __name__ == '__main__':
+    # 创建游戏实例并运行游戏。
     ai = AlienInvasion()
     ai.run_game()
