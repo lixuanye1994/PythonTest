@@ -3,6 +3,7 @@ import pygame
 from setting import Settings
 from ship import Ship
 from bullet import Bullet
+import time
 
 
 # 游戏程序主要入口，初始化游戏并创建游戏资源
@@ -53,7 +54,7 @@ class AlienGame:
             sys.exit()
         # 按空格开火
         elif even.key == pygame.K_SPACE:
-            self._fire_bullet()
+            self.setting.bullet_fire_type = True
 
     # 重构检测玩家松开键盘
     def _check_keyup_events(self, even):
@@ -65,6 +66,8 @@ class AlienGame:
             self.ship.move_t = False
         if even.key == pygame.K_DOWN:
             self.ship.move_b = False
+        elif even.key == pygame.K_SPACE:
+            self.setting.bullet_fire_type = False
 
     def _update_screen(self):
         # 让绘制的屏幕可见
@@ -81,10 +84,14 @@ class AlienGame:
     def _fire_bullet(self):
         new_bullet = Bullet(self)
         self.bullets.add(new_bullet)
+        # time.sleep(0.1)
 
     # 监听子弹
     def _update_bullet(self):
-        # 子弹更新  
+        # 长按一直开火功能实现
+        if self.setting.bullet_fire_type:
+            self._fire_bullet()
+        # 子弹更新
         self.bullets.update()
         # 删除超出屏幕的子弹，释放内存
         for bullet in self.bullets.copy():

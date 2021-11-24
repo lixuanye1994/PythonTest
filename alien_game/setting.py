@@ -8,11 +8,12 @@ class Settings:
         self.screnn_height = 800
         self.bg_color = (230, 230, 230)
         # 飞船速度设置
-        self.ship_speed = 0.1
+        self.ship_speed = 0.3
         # 退出按键设置
         self.quit_key = pygame.K_q
         # 添加子弹设置
-        self.bullet_speed = 0.2
+        self.bullet_speed = 1.6
         self.bullet_width = 3
         self.bullet_height = 15
         self.bullet_color = (60, 60, 60)
+        self.bullet_fire_type = False
