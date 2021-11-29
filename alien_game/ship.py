@@ -1,3 +1,10 @@
+# --------------------------------------------------------
+# -*- coding: utf-8 -*-
+# File  : ship.py
+# Author: LXY
+# Date  : 2021/11
+# Software  : VS Code
+# --------------------------------------------------------
 import pygame
 from setting import Settings
 
@@ -17,11 +24,13 @@ class Ship:
         self.rect = self.image.get_rect()
         # 将飞船放置在屏幕底下和中间
         self.rect.midbottom = self.screen_rect.midbottom
+        # -------------------------------
         # 飞船左右移动的属性
         self.move_r = False
         self.move_l = False
         self.move_t = False
         self.move_b = False
+        # -------------------------------
         # 储存飞船速度值
         self.x = float(self.rect.x)
         self.y = float(self.rect.y)

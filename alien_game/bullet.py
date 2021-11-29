@@ -1,3 +1,10 @@
+# --------------------------------------------------------
+# -*- coding: utf-8 -*-
+# File  : bullet.py
+# Author: LXY
+# Date  : 2021/11
+# Software  : VS Code
+# --------------------------------------------------------
 import pygame
 from pygame.sprite import Sprite
 
