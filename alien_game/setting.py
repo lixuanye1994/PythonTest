@@ -11,12 +11,14 @@ import pygame
 class Settings:
     def __init__(self):
         # 程序主题界面大小颜色设置
-        self.screen_width = 1200
+        self.screen_width = 1920
         self.screen_height = 800
         self.bg_color = (230, 230, 230)
         # -------------------------------
         # 飞船速度设置
         self.ship_speed = 0.3
+        # 每一局游戏机会，飞船数量
+        self.ship_limit = 3
         # -------------------------------
         # 退出按键设置
         self.quit_key = pygame.K_q

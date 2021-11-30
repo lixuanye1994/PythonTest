@@ -19,7 +19,7 @@ class Alien(Sprite):
         # 调用设置模块
         self.settings = ai_game.setting
         # 加载外星人图像
-        self.image = pygame.image.load('images/alien.bmp')
+        self.image = pygame.image.load('img/alien2.bmp')
         # 获取外接矩形
         self.rect = self.image.get_rect()
         # -------------------------------
