@@ -6,10 +6,20 @@
 
 本章教程https://www.bilibili.com/video/BV1iU4y1A7MH
 
+**前提：建议创建虚拟环境，在虚拟环境中创建测试项目**。
+
+```python
+pip install virtualenvwrapper-win # windows环境下使用，其他环境另外百度
+进入自己需要的虚拟环境目录
+virtualenv venv # 创建虚拟环境文件夹venv
+active # 启动虚拟环境
+deactive # 退出虚拟环境
+```
+
 1.下载：用pip安装器下载安装
 
 ```python
-pip install Django==3.2
+pip install Django
 ```
 
 2.新建工程：
